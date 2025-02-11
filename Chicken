@@ -1,0 +1,60 @@
+import random
+import time
+
+def intro():
+    print("You find yourself standing on a hill, looking at the bright sun.")
+    print("The sun is shining brightly, and you can feel its warmth on your skin.")
+    print("You have a few options to consider:")
+    print("1. Stare directly at the sun.")
+    print("2. Look around the surroundings.")
+    print("3. Sit down and relax.")
+    print("4. Go back home.")
+
+def stare_at_sun():
+    print("\nYou stare directly at the sun...")
+    time.sleep(2)
+    print("Your vision becomes blurry, and you feel a headache coming on.")
+    print("You realize it's not a good idea to look directly at the sun!")
+    print("You decide to look away and take a break.")
+    return False
+
+def look_around():
+    print("\nYou decide to look around...")
+    time.sleep(2)
+    print("You see beautiful flowers, trees, and a clear blue sky.")
+    print("You feel a sense of peace and happiness.")
+    return True
+
+def sit_down():
+    print("\nYou sit down on the grass and take a deep breath...")
+    time.sleep(2)
+    print("You close your eyes and enjoy the warmth of the sun.")
+    print("After a while, you feel relaxed and rejuvenated.")
+    return True
+
+def go_home():
+    print("\nYou decide it's time to go home...")
+    time.sleep(2)
+    print("You walk back down the hill, feeling content with your day.")
+    return False
+
+def main():
+    while True:
+        intro()
+        choice = input("What would you like to do? (1-4): ")
+
+        if choice == '1':
+            if not stare_at_sun():
+                break
+        elif choice == '2':
+            look_around()
+        elif choice == '3':
+            sit_down()
+        elif choice == '4':
+            if not go_home():
+                break
+        else:
+            print("Invalid choice. Please choose a number between 1 and 4.")
+
+if __name__ == "__main__":
+    main()
